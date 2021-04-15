@@ -8,5 +8,10 @@ namespace AgileProject.Models
 {
     public class BodyEdit
     {
+        public int BodyId { get; set; }
+
+        public string BodyType { get; set; }
+
+        public string BodyDescription { get; set; }
     }
 }

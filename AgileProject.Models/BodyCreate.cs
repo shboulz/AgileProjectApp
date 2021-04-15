@@ -16,5 +16,6 @@ namespace AgileProject.Models
 
         [MaxLength(8000)]
         public string BodyDescription { get; set; }
+
     }
 }

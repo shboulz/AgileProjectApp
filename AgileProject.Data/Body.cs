@@ -19,7 +19,12 @@ namespace AgileProject.Data
         public string BodyDescription { get; set; }
 
         [Required]
-        public Guid CharId { get; set; }
+        public Guid CharBodyId { get; set; }
+
+        [Required]
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }
