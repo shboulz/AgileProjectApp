@@ -35,6 +35,14 @@ namespace AgileProject.Data
         {
             return new ApplicationDbContext();
         }
+       
+
+        public DbSet<Face> Faces { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
 
         public DbSet<Body> Bodies { get; set; }
 
@@ -67,4 +75,19 @@ namespace AgileProject.Data
             HasKey(iur => iur.UserId);
         }
     }
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    {
+        public IdentityUserLoginConfiguration()
+        {
+            HasKey(iul => iul.UserId);
+        }
+    }
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+    {
+        public IdentityUserRoleConfiguration()
+        {
+            HasKey(iur => iur.UserId);
+        }
+    }
+
 }

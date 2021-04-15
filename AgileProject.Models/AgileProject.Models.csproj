@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FaceCreate.cs" />
+    <Compile Include="FaceDetail.cs" />
+    <Compile Include="FaceEdit.cs" />
+    <Compile Include="FaceListItem.cs" />
     <Compile Include="BodyCreate.cs" />
     <Compile Include="BodyDetail.cs" />
     <Compile Include="BodyEdit.cs" />
