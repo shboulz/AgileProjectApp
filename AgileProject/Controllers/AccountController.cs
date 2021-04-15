@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using AgileProject.Models;
 using AgileProject.Providers;
 using AgileProject.Results;
+using AgileProject.Data;
 
 namespace AgileProject.Controllers
 {
