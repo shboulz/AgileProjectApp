@@ -88,7 +88,30 @@ namespace AgileProject.Services
                         .Faces
                         .Single(e => e.FaceId == model.FaceId && e.CharFaceId == _userId);
 
-                entity.
+                entity.FaceShape = model.FaceShape;
+                entity.EyeShape = model.EyeShape;
+                entity.EyeColor = model.EyeColor;
+                entity.EyebrowShape = entity.EyebrowShape;
+                entity.Nose = model.Nose;
+                entity.Mouth = model.Mouth;
+                entity.EarHeight = model.EarHeight;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteFace(int faceId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Faces
+                        .Single(e => e.FaceId == faceId && e.CharFaceId == _userId);
+
+                ctx.Faces.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
