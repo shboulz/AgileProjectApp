@@ -3,8 +3,10 @@ using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using AgileProject.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace AgileProject.Data
 {
@@ -34,6 +36,14 @@ namespace AgileProject.Data
             return new ApplicationDbContext();
         }
 
+        public DbSet<Body> Bodies { get; set; }
+        
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
