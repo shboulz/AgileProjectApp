@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using AgileProject.Providers;
 using AgileProject.Models;
+using AgileProject.Data;
 
 namespace AgileProject
 {
