@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 
-namespace AgileProject.Models
+namespace AgileProject.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -24,11 +24,13 @@ namespace AgileProject.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
@@ -42,6 +44,12 @@ namespace AgileProject.Models
             modelBuilder
                 .Conventions
                 .Remove<PluralizingTableNameConvention>();
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+            .Conventions
+            .Remove<PluralizingTableNameConvention>();
+
             modelBuilder
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
@@ -56,6 +64,7 @@ namespace AgileProject.Models
             HasKey(iul => iul.UserId);
         }
     }
+
     public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
     {
         public IdentityUserRoleConfiguration()
