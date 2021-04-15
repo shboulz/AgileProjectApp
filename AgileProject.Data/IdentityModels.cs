@@ -37,13 +37,8 @@ namespace AgileProject.Data
         }
 
         public DbSet<Body> Bodies { get; set; }
-        
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder
-                .Conventions
-                .Remove<PluralizingTableNameConvention>();
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
