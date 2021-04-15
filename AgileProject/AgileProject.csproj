@@ -306,6 +306,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgileProject.Data\AgileProject.Data.csproj">
+      <Project>{e155cbe0-6301-4967-90d1-7285f1ad47dc}</Project>
+      <Name>AgileProject.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileProject.Models\AgileProject.Models.csproj">
+      <Project>{7630b7d0-9eb6-4a91-a6b7-f65769b84577}</Project>
+      <Name>AgileProject.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileProject.Services\AgileProject.Services.csproj">
+      <Project>{cf5bd18a-74a8-46f9-9344-ccf4f7696b0e}</Project>
+      <Name>AgileProject.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
